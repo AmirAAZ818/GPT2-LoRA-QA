@@ -6,10 +6,14 @@ This repository contains the implementation of parameter-efficient fine-tuning u
 
 ## What is LoRA?
 
-LoRA reduces the computational cost of fine-tuning LLMa by updating only a low-rank decomposition of the weight matrix, leaving the original weights frozen. The formula is: $$ W' = W + \Delta W = W + BA $$ where: 
-- \( W \) is the original weight matrix
-- \( \Delta W = BA \) with \( B \in \mathbb{R}^{d \times r} \) and \( A \in \mathbb{R}^{r \times k} \)
-- \( r \ll \min(d, k) \) controls the rank, minimizing trainable parameters.
+LoRA reduces the computational cost of fine-tuning LLMa by updating only a low-rank decomposition of the weight matrix, leaving the original weights frozen. The formula is: 
+
+$$W' = W + \Delta W = W + BA$$ 
+
+where: 
+- $W$ is the original weight matrix
+- $\Delta W = BA$ with $B \in \mathbb{R}^{d \times r}$ and $A \in \mathbb{R}^{r \times k}$
+- $r \ll \min(d, k)$ controls the rank, minimizing trainable parameters.
 
 ## Purpose
 
